@@ -1,129 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMAZON</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olive & Avery Style Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<header>
-    <div class="navbar">
-        <div class="nav-logo border">
-            <div class="logo">
-
-            </div>
-        </div>
-        <div class="nav-address border">
-            <p class="add-first">Deliver to</p>
-
-            <div class="add-icon">
-                <i class="fa-solid fa-location-dot"></i>
-                <p class="add-sec">India</p>
-            </div>
-
-        </div>
-        <div class="nav-search border">
-            <select class="search-select">
-                <option>All</option>
-                <input placeholder="Amazon search.in" class="search-input">
-            </select>
-            <div class="search-logo">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-
-        </div>
-        <div class="nav-sign">
-            <p><span>Hello,sign in</span></p>
-            <p class="nav-second">Account & Lists</p>
-        </div>
-        <div class="nav-return">
-            <p><span>Returns</span></p>
-            <p class="nav-second">& Orders</p>
-        </div>
-        <div class="nav-cart">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            cart
-        </div>
-    </div>
-    <div class="panel">
-        <div class="all-panel">
-            <i class="fa-solid fa-bars"></i>
-            All
-        </div>
-
-        <div class="panel-p">
-            <P>Fresh</P>
-            <P>MX Player</P>
-            <P>Bestsellers</P>
-            <P>Today's Deals</P>
-            <P>Mobiles</P>
-            <P>Prime</P>
-            <P>Electronics</P>
-            <P>Fashion</P>
-        </div>
-
-        <div class="panel-last">
-            shop deals in Electronics
-        </div>
-
-    </div>
-
-
-</header>
-
 <body>
-        <div class="hero">
-            <div class="hero-mess">
-                <p>you are a amazone user. <a>Click on this Amazon.in</a></p>
-            </div>
-        </div>
-        <!-- box 3 main -->
 
-        <div class="shop">
-            <div class="box1 box">
-               <div class="box-content">
-                 <h2>Revamp your home & style</h2>
-                <div class="box-img" style="background-image: url(amazonimage/box1_image.jpg);"></div>
-                <p>shop now</p>
-               </div>
-            </div>
-            <div class="box2 box">
-                 <div class="box-content">
-                 <h2>Revamp your home & style</h2>
-                <div class="box-img" style="background-image: url(amazonimage/box2_image.jpg);"></div>
-                <p>shop now</p>
-               </div>
-            </div>
-            <div class="box3 box">
-                 <div class="box-content">
-                 <h2>Revamp your home & style</h2>
-                <div class="box-img" style="background-image: url(amazonimage/box3_image.jpg);"></div>
-                <p>shop now</p>
-               </div>
-            </div>
-            <div class="box4 box">
-                 <div class="box-content">
-                 <h2>Revamp your home & style</h2>
-                <div class="box-img" style="background-image: url(amazonimage/box4_image.jpg);"></div>
-                <p>shop now</p>
-               </div>
-            </div>
-             <div class="box1 box">
-               <div class="box-content">
-                 <h2>Revamp your home & style</h2>
-                <div class="box-img" style="background-image: url(amazonimage/box5_image.jpg);"></div>
-                <p>shop now</p>
-               </div>
-            </div>
-            <div class="box2 box">
-                 <div class="box-content">
-                 <h2>Revamp your home & style</h2>
-                <div class="box-img" style="background-image: url(amazonimage/box6_image.jpg);"></div>
-                <p>shop now</p>
-               </div>
-            </div>
+  <!-- Header -->
+  <header>
+    <h1>Olive & Avery</h1>
+
+    <!-- Hamburger Button -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#">New In</a>
+      <a href="#">Gifts</a>
+      <a href="#">Baby</a>
+      <a href="#">Lifestyle</a>
+      <a href="#">Brands</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>new collection</h2>
+    <h1>shop our BABYWEAR</h1>
+    <button>Shop Now</button>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="category-box">NEW IN</div>
+    <div class="category-box">BABY</div>
+    <div class="category-box">LIFESTYLE</div>
+    <div class="category-box">GIFTS</div>
+  </section>
+
+  <!-- Sub Hero -->
+  <section class="sub-hero">
+    <h2>Find the PERFECT GIFT</h2>
+    <p>to celebrate a special moment</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Olive & Avery. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Hamburger -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
+
+
