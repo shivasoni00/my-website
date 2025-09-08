@@ -6,7 +6,196 @@
   <title>Olive & Avery Style Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
   <style>
-    
+    /* Global Styles */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #F7F6F2;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 0;
+  color: #4B5D49;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav a {
+  color: #4B5D49;
+  text-decoration: none;
+  margin: 5px 12px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #8B9D83;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: #4B5D49;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #8B9D83;
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+  margin: 10px 0;
+}
+
+.hero h2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.hero button {
+  background-color: #4B5D49;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.hero button:hover {
+  background-color: #333333;
+}
+
+/* Categories */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.category-box {
+  background-color: #C7CEC5;
+  border: 2px solid #8B9D83;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+
+.category-box:hover {
+  background-color: #8B9D83;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Sub Hero */
+.sub-hero {
+  background-color: #F7F6F2;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.sub-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #4B5D49;
+}
+
+.sub-hero p {
+  font-size: 16px;
+  color: #8B9D83;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #4B5D49;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero h2 {
+    font-size: 16px;
+  }
+  .hero button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+  nav a {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  .categories {
+    grid-template-columns: 1fr; /* stack boxes */
+  }
+  .category-box {
+    font-size: 18px;
+    padding: 40px 10px;
+  }
+}
+
   </style>  
 </head>
   
@@ -68,6 +257,7 @@
 
 </body>
 </html>
+
 
 
 
