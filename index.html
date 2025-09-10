@@ -1,263 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- save as test.html and open in browser -->
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Olive & Avery Style Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>8 images grid</title>
   <style>
-    /* Global Styles */
-body {
-  font-family: 'Georgia', serif;
-  background-color: #F7F6F2;
-  color: #333333;
-  margin: 0;
-  padding: 0;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; padding: 18px; background: #f7f7f7; }
 
-/* Header */
-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 15px 20px;
-  text-align: center;
-  position: relative;
-}
+    /* grid container */
+    .hero3 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 boxes per row on desktop */
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2px;
+    }
 
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  margin: 0;
-  color: #4B5D49;
-}
+    /* each box: keep aspect ratio using padding-top fallback (works everywhere) */
+    .box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ddd; /* fallback color while image loads */
+      /* padding-top sets the height as % of width -> (height/width)*100 */
+      /* for 270px width x 250px height: padding-top = 250/270 * 100 = 92.5926% */
+      padding-top: 92.5926%;
+    }
 
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
+    /* image covers the box without distortion */
+    .box img {
+      position: absolute;
+      inset: 0;               /* top:0; right:0; bottom:0; left:0; */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      /* scale & crop to fill perfectly */
+      display: block;
+    }
 
-nav a {
-  color: #4B5D49;
-  text-decoration: none;
-  margin: 5px 12px;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: #8B9D83;
-}
-
-/* Hamburger */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  color: #4B5D49;
-}
-
-/* Hero Section */
-.hero {
-  background-color: #8B9D83;
-  padding: 80px 20px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.hero h1 {
-  font-size: 40px;
-  font-family: 'Playfair Display', serif;
-  margin: 10px 0;
-}
-
-.hero h2 {
-  font-size: 20px;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.hero button {
-  background-color: #4B5D49;
-  color: #ffffff;
-  border: none;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.hero button:hover {
-  background-color: #333333;
-}
-
-/* Categories */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.category-box {
-  background-color: #C7CEC5;
-  border: 2px solid #8B9D83;
-  padding: 50px 20px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: #333333;
-  transition: all 0.3s ease;
-}
-
-.category-box:hover {
-  background-color: #8B9D83;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-/* Sub Hero */
-.sub-hero {
-  background-color: #F7F6F2;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.sub-hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: #4B5D49;
-}
-
-.sub-hero p {
-  font-size: 16px;
-  color: #8B9D83;
-  margin-top: 10px;
-}
-
-/* Footer */
-footer {
-  background-color: #4B5D49;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #ffffff;
-    padding: 10px;
-    border-top: 1px solid #e0e0e0;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-  .hero h2 {
-    font-size: 16px;
-  }
-  .hero button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 22px;
-  }
-  nav a {
-    margin: 10px 0;
-    font-size: 14px;
-  }
-  .categories {
-    grid-template-columns: 1fr; /* stack boxes */
-  }
-  .category-box {
-    font-size: 18px;
-    padding: 40px 10px;
-  }
-}
-
-  </style>  
+    /* Responsive: 2 per row on medium screens, 1 per row on small screens */
+    @media (max-width: 900px) {
+      .hero3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .hero3 { grid-template-columns: repeat(1, 1fr); }
+    }
+  </style>
 </head>
-  
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Olive & Avery</h1>
-
-    <!-- Hamburger Button -->
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <nav id="nav">
-      <a href="#">Home</a>
-      <a href="#">New In</a>
-      <a href="#">Gifts</a>
-      <a href="#">Baby</a>
-      <a href="#">Lifestyle</a>
-      <a href="#">Brands</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>new collection</h2>
-    <h1>shop our BABYWEAR</h1>
-    <button>Shop Now</button>
-  </section>
-
-  <!-- Categories -->
-  <section class="categories">
-    <div class="category-box">NEW IN</div>
-    <div class="category-box">BABY</div>
-    <div class="category-box">LIFESTYLE</div>
-    <div class="category-box">GIFTS</div>
-  </section>
-
-  <!-- Sub Hero -->
-  <section class="sub-hero">
-    <h2>Find the PERFECT GIFT</h2>
-    <p>to celebrate a special moment</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Olive & Avery. All rights reserved.</p>
-  </footer>
-
-  <!-- JavaScript for Hamburger -->
-  <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("nav");
-
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-  </script>
+  <div class="hero3">
+    <!-- Replace src with your own image paths -->
+    <div class="box"><img src="images/photo1.jpg" alt="photo1"></div>
+    <div class="box"><img src="images/photo2.jpg" alt="photo2"></div>
+    <div class="box"><img src="images/photo3.jpg" alt="photo3"></div>
+    <div class="box"><img src="images/photo4.jpg" alt="photo4"></div>
+    <div class="box"><img src="images/photo5.jpg" alt="photo5"></div>
+    <div class="box"><img src="images/photo6.jpg" alt="photo6"></div>
+    <div class="box"><img src="images/photo7.jpg" alt="photo7"></div>
+    <div class="box"><img src="images/photo8.jpg" alt="photo8"></div>
+  </div>
 
 </body>
 </html>
-
-
-
-
